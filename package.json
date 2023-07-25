@@ -1,0 +1,12 @@
+{
+    "name": "cloudflare-double-slashes-issue",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "ver": "wrangler -v",
+        "dev": "kill $(lsof -t -i:8788); wrangler pages dev out"
+    },
+    "devDependencies": {
+        "wrangler": "latest"
+    }
+}
