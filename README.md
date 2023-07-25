@@ -14,6 +14,6 @@ The middleware is properly invoked on `/secure/one` route but not on the `//secu
 
 - [Github Repo: https://github.com/Shivam010/cloudflare-double-slashes-issue](https://github.com/Shivam010/cloudflare-double-slashes-issue)
 - [Hosted on: https://double-slashes-issue.pages.dev](https://double-slashes-issue.pages.dev/)
-- [`/secure` route](https://double-slashes-issue.pages.dev/secure)
 - [`/secure/one` route](https://double-slashes-issue.pages.dev/secure/one)
 - [`//secure/one` route](https://double-slashes-issue.pages.dev//secure/one)
+- [`/secure/one?allow` route](https://double-slashes-issue.pages.dev/secure/one?allow) _that's actually allowed by middleware_
