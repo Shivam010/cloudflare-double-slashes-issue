@@ -1,1 +1,53 @@
 <h1>/index.html</h1>
+
+<h2 id="cloudflare-double-slashes-issue">cloudflare-double-slashes-issue</h2>
+<p>
+	This project is to replicate an issue with the <code>wrangler</code> from
+	Cloudflare.
+</p>
+<p>
+	There&#39;s a middleware in <code>/functions/secure</code> directory to be
+	applied on all routes of <code>/secure</code>.
+</p>
+<p>
+	And the <code>/out/secure</code> directory contains a file
+	<code>one.html</code> which should be served at <code>/secure/one</code> (but
+	first the middleware needs to be invoked)
+</p>
+<p>Now, the <strong>Problem</strong>...</p>
+<p>
+	The middleware is properly invoked on <code>/secure/one</code> route but not
+	on the <code>//secure/one</code>, whenever someone uses a double slash before
+	the middleware directory, wrangler doesn&#39;t run the middleware and instead
+	directly serve the pages.
+</p>
+
+<h2 id="links">Links</h2>
+<ul>
+	<li>
+		<a href="https://github.com/Shivam010/cloudflare-double-slashes-issue"
+			>Github Repo:
+			https://github.com/Shivam010/cloudflare-double-slashes-issue</a
+		>
+	</li>
+	<li>
+		<a href="https://double-slashes-issue.pages.dev/"
+			>Hosted on: https://double-slashes-issue.pages.dev</a
+		>
+	</li>
+	<li>
+		<a href="https://double-slashes-issue.pages.dev/secure"
+			><code>/secure</code> route</a
+		>
+	</li>
+	<li>
+		<a href="https://double-slashes-issue.pages.dev/secure/one"
+			><code>/secure/one</code> route</a
+		>
+	</li>
+	<li>
+		<a href="https://double-slashes-issue.pages.dev//secure/one"
+			><code>//secure/one</code> route</a
+		>
+	</li>
+</ul>
